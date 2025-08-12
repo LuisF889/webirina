@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Russian-English Vocabulary Practice</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Russian-English Vocabulary</h1>
+        <h2>страница создана для Ирины</h2>
+        <div class="card">
+            <div class="word-display">
+                <div class="russian-word" id="russianWord">Привет</div>
+                <div class="english-word" id="englishWord">Hello</div>
+            </div>
+            <div class="controls">
+                <button id="pronounceBtn" class="btn pronounce-btn">Послушайте произношение</button>
+                <button id="speakBtn" class="btn speak-btn">Попробуйте произнести</button>
+                <button id="newWordBtn" class="btn new-word-btn">Новое слово</button>
+            </div>
+            <div class="feedback" id="feedback"></div>
+        </div>
+    </div>
+    <audio id="correctSound" src="https://assets.mixkit.co/sfx/preview/mixkit-correct-answer-tone-2870.mp3" preload="auto"></audio>
+    <audio id="wrongSound" src="https://assets.mixkit.co/sfx/preview/mixkit-wrong-answer-fail-notification-946.mp3" preload="auto"></audio>
+    <script src="script.js"></script>
+</body>
+</html>

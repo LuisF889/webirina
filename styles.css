@@ -1,0 +1,204 @@
+/* Dark Theme Vocabulary Practice */
+:root {
+  --primary-color: #6c5ce7;
+  --secondary-color: #a29bfe;
+  --success-color: #00b894;
+  --error-color: #d63031;
+  --warning-color: #fdcb6e;
+  --text-color: #f5f6fa;
+  --bg-color: #2d3436;
+  --card-bg: #353b48;
+  --button-hover: rgba(255, 255, 255, 0.1);
+  --border-radius: 12px;
+  --box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 2.5rem;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.word-display {
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+}
+
+.russian-word {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.english-word {
+  font-size: 2rem;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  padding: 14px 20px;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  flex: 1 1 auto;
+  min-width: 140px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--button-hover);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.btn:hover::after {
+  opacity: 1;
+}
+
+.btn:active {
+  transform: translateY(2px);
+}
+
+.pronounce-btn {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.speak-btn {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.new-word-btn {
+  background-color: #0984e3;
+  color: white;
+}
+
+.feedback {
+  min-height: 50px;
+  font-size: 1.2rem;
+  padding: 15px;
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.correct {
+  color: white;
+  background-color: var(--success-color);
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(0, 184, 148, 0.3);
+}
+
+.incorrect {
+  color: white;
+  background-color: var(--error-color);
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(214, 48, 49, 0.3);
+}
+
+.listening {
+  color: var(--text-color);
+  background-color: var(--warning-color);
+  font-weight: 600;
+  animation: pulse 1.5s infinite;
+  box-shadow: 0 4px 6px rgba(253, 203, 110, 0.3);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .card {
+    padding: 1.5rem;
+  }
+  
+  .russian-word {
+    font-size: 2.2rem;
+  }
+  
+  .english-word {
+    font-size: 1.6rem;
+  }
+  
+  .btn {
+    min-width: 100%;
+    padding: 12px;
+  }
+}
+
+/* Glow effect for correct answers */
+@keyframes glow {
+  0% { box-shadow: 0 0 5px var(--success-color); }
+  50% { box-shadow: 0 0 20px var(--success-color); }
+  100% { box-shadow: 0 0 5px var(--success-color); }
+}
+
+.correct-glow {
+  animation: glow 1.5s ease-in-out;
+}
